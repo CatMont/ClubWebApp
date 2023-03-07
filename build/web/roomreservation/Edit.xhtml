@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRoomreservationTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRoomreservationLabel_roomreservationid}" for="roomreservationid" />
+                    <h:inputText id="roomreservationid" value="#{roomreservationController.selected.roomreservationid}" title="#{bundle.EditRoomreservationTitle_roomreservationid}" required="true" requiredMessage="#{bundle.EditRoomreservationRequiredMessage_roomreservationid}"/>
+                    <h:outputLabel value="#{bundle.EditRoomreservationLabel_reservationstartdatetime}" for="reservationstartdatetime" />
+                    <h:inputText id="reservationstartdatetime" value="#{roomreservationController.selected.reservationstartdatetime}" title="#{bundle.EditRoomreservationTitle_reservationstartdatetime}" required="true" requiredMessage="#{bundle.EditRoomreservationRequiredMessage_reservationstartdatetime}"/>
+                    <h:outputLabel value="#{bundle.EditRoomreservationLabel_reservationenddatetime}" for="reservationenddatetime" />
+                    <h:inputText id="reservationenddatetime" value="#{roomreservationController.selected.reservationenddatetime}" title="#{bundle.EditRoomreservationTitle_reservationenddatetime}" required="true" requiredMessage="#{bundle.EditRoomreservationRequiredMessage_reservationenddatetime}"/>
+                    <h:outputLabel value="#{bundle.EditRoomreservationLabel_numberofguests}" for="numberofguests" />
+                    <h:inputText id="numberofguests" value="#{roomreservationController.selected.numberofguests}" title="#{bundle.EditRoomreservationTitle_numberofguests}" required="true" requiredMessage="#{bundle.EditRoomreservationRequiredMessage_numberofguests}">
+                        <f:validateLongRange minimum ="1" maximum ="100"/>
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditRoomreservationLabel_clubid}" for="clubid" />
+                    <h:selectOneMenu id="clubid" value="#{roomreservationController.selected.clubid}" title="#{bundle.EditRoomreservationTitle_clubid}" required="true" requiredMessage="#{bundle.EditRoomreservationRequiredMessage_clubid}">
+                        <f:selectItems value="#{clubController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRoomreservationLabel_roomid}" for="roomid" />
+                    <h:selectOneMenu id="roomid" value="#{roomreservationController.selected.roomid}" title="#{bundle.EditRoomreservationTitle_roomid}" required="true" requiredMessage="#{bundle.EditRoomreservationRequiredMessage_roomid}">
+                        <f:selectItems value="#{roomController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{roomreservationController.update}" value="#{bundle.EditRoomreservationSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRoomreservationViewLink}"/>
+                <br />
+                <h:commandLink action="#{roomreservationController.prepareList}" value="#{bundle.EditRoomreservationShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRoomreservationIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

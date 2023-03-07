@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/resources/css/jsfcrud.css</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/index.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/jsf/ClubController.java</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/conf/persistence.xml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/WEB-INF/glassfish-resources.xml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/jpa/session/AbstractFacade.java</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/roomreservation/Create.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/WEB-INF/faces-config.xml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/room/Edit.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/club/Edit.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/club/View.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/jsf/util/JsfUtil.java</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/jpa/session/ClubFacade.java</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/jpa/entities/Club.java</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/jpa/entities/Room.java</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/jsf/util/PaginationHelper.java</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/club/List.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/club/Create.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/web/template.xhtml</file>
+            <file>file:/C:/Users/turta/Documents/NetBeansProjects/WebApplicationClub/src/java/resources/Bundle.properties</file>
+        </group>
+    </open-files>
+</project-private>

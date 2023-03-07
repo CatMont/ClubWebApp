@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRoomTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRoomLabel_roomid}" for="roomid" />
+                    <h:inputText id="roomid" value="#{roomController.selected.roomid}" title="#{bundle.CreateRoomTitle_roomid}" required="true" requiredMessage="#{bundle.CreateRoomRequiredMessage_roomid}"/>
+                    <h:outputLabel value="#{bundle.CreateRoomLabel_roomname}" for="roomname" />
+                    <h:inputText id="roomname" value="#{roomController.selected.roomname}" title="#{bundle.CreateRoomTitle_roomname}" required="true" requiredMessage="#{bundle.CreateRoomRequiredMessage_roomname}"/>
+                    <h:outputLabel value="#{bundle.CreateRoomLabel_roomlocation}" for="roomlocation" />
+                    <h:inputText id="roomlocation" value="#{roomController.selected.roomlocation}" title="#{bundle.CreateRoomTitle_roomlocation}" required="true" requiredMessage="#{bundle.CreateRoomRequiredMessage_roomlocation}"/>
+                    <h:outputLabel value="#{bundle.CreateRoomLabel_roomcapacity}" for="roomcapacity" />
+                    <h:inputText id="roomcapacity" value="#{roomController.selected.roomcapacity}" title="#{bundle.CreateRoomTitle_roomcapacity}" required="true" requiredMessage="#{bundle.CreateRoomRequiredMessage_roomcapacity}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{roomController.create}" value="#{bundle.CreateRoomSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{roomController.prepareList}" value="#{bundle.CreateRoomShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateRoomIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

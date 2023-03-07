@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRoomTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRoomLabel_roomid}" for="roomid" />
+                    <h:inputText id="roomid" value="#{roomController.selected.roomid}" title="#{bundle.EditRoomTitle_roomid}" required="true" requiredMessage="#{bundle.EditRoomRequiredMessage_roomid}"/>
+                    <h:outputLabel value="#{bundle.EditRoomLabel_roomname}" for="roomname" />
+                    <h:inputText id="roomname" value="#{roomController.selected.roomname}" title="#{bundle.EditRoomTitle_roomname}" required="true" requiredMessage="#{bundle.EditRoomRequiredMessage_roomname}"/>
+                    <h:outputLabel value="#{bundle.EditRoomLabel_roomlocation}" for="roomlocation" />
+                    <h:inputText id="roomlocation" value="#{roomController.selected.roomlocation}" title="#{bundle.EditRoomTitle_roomlocation}" required="true" requiredMessage="#{bundle.EditRoomRequiredMessage_roomlocation}"/>
+                    <h:outputLabel value="#{bundle.EditRoomLabel_roomcapacity}" for="roomcapacity" />
+                    <h:inputText id="roomcapacity" value="#{roomController.selected.roomcapacity}" title="#{bundle.EditRoomTitle_roomcapacity}" required="true" requiredMessage="#{bundle.EditRoomRequiredMessage_roomcapacity}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{roomController.update}" value="#{bundle.EditRoomSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRoomViewLink}"/>
+                <br />
+                <h:commandLink action="#{roomController.prepareList}" value="#{bundle.EditRoomShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRoomIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

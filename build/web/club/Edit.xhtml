@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditClubTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditClubLabel_clubid}" for="clubid" />
+                    <h:inputText id="clubid" value="#{clubController.selected.clubid}" title="#{bundle.EditClubTitle_clubid}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_clubid}"/>
+                    <h:outputLabel value="#{bundle.EditClubLabel_clubname}" for="clubname" />
+                    <h:inputText id="clubname" value="#{clubController.selected.clubname}" title="#{bundle.EditClubTitle_clubname}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_clubname}"/>
+                    <h:outputLabel value="#{bundle.EditClubLabel_clubregularmeetingdays}" for="clubregularmeetingdays" />
+                    <h:selectOneRadio id = "RegularMeetingDays" value = "#{clubController.selected.clubregularmeetingdays}" required="true"> 
+                        <f:selectItem itemValue = "Monday" itemLabel = "Monday" /> 
+                        <f:selectItem itemValue = "Tuesday" itemLabel = "Tuesday" /> 
+                        <f:selectItem itemValue = "Wednesday" itemLabel = "Wednesday" /> 
+                        <f:selectItem itemValue = "Thursday" itemLabel = "Thursday" /> 
+                        <f:selectItem itemValue = "Friday" itemLabel = "Friday" /> 
+                    </h:selectOneRadio>   
+                    <h:outputLabel value="#{bundle.EditClubLabel_clubregularmeetingtimes}" for="clubregularmeetingtimes" />
+                    <h:inputText id="clubregularmeetingtimes" value="#{clubController.selected.clubregularmeetingtimes}" title="#{bundle.EditClubTitle_clubregularmeetingtimes}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_clubregularmeetingtimes}"/>
+                    <h:outputLabel value="#{bundle.EditClubLabel_clubpresident}" for="clubpresident" />
+                    <h:inputText id="clubpresident" value="#{clubController.selected.clubpresident}" title="#{bundle.EditClubTitle_clubpresident}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_clubpresident}"/>
+                    <h:outputLabel value="#{bundle.EditClubLabel_clubmembercount}" for="clubmembercount" />
+                    <h:inputText id="clubmembercount" value="#{clubController.selected.clubmembercount}" title="#{bundle.EditClubTitle_clubmembercount}" required="true" requiredMessage="#{bundle.EditClubRequiredMessage_clubmembercount}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{clubController.update}" value="#{bundle.EditClubSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditClubViewLink}"/>
+                <br />
+                <h:commandLink action="#{clubController.prepareList}" value="#{bundle.EditClubShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditClubIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
